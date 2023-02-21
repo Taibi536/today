@@ -1,0 +1,32 @@
+<%-  include('./layouts/header') %>
+<%-  include('./layouts/navbar') %>
+
+    <main class="bg-[url('bck2.jpg')] bg-center bg-cover bg-no-repeat py-32">
+        <div class="bg-white text-black rounded-lg">
+            <div class="text-center ">
+                <h1 class="font-bold text-3xl">Marriage hall</h1>
+                <h2>Owner Contact</h2>
+                <h3>address of marraige hall</h3>
+            </div>
+            <hr class="invert">
+            <ul class=" flex flex-col items-center text-sm sm:text-lg  ">
+                <li class="my-4">Slip ID : <a href=""> <%=data.slip%></a></li>
+                <li class="my-4">Customer Name: <a href=""> <%=data.name%> </a></li>
+                <li class="my-4"> Phone Number: <a href=""> <%=data.number%> </a></li>
+                <li class="my-4">Customer Address : <a href=""> <%=data.address%> </a></li>
+                <li class="my-4">Sitting Plan : <a href=""><%=data.sitting%> </a></li>
+                <li class="my-4"> Function type: <a href=""> <%=data.fuction%> </a></li>
+                <li class="my-4"> Area type: <a href=""> <%=data.area%> </a></li>
+                <li class="my-4"> Event Time: <a href=""> <%=data.t%> </a></li>
+                <li class="my-4"> Total Rent: <a href=""> <%=data.t_rent%> </a></li>
+               
+                <li class="my-4"> Advance Rent: <a href=""> <%=data.a_rent%> </a></li>
+                <% let date = new Date(data.date); %>
+<li class="my-4"> Date: <a href=""> <%= date.getFullYear() %>-<%= (date.getMonth() + 1).toString().padStart(2, '0') %>-<%= date.getDate().toString().padStart(2, '0') %> </a></li>
+                <li class="my-4"> Remaining Rent: <a href=""><%=data.r_rent%> </a></li>
+                <input value="print" type="submit" onclick="window.print()"  class="bg-black text-white rounded-lg px-2 py-2 my-4 hover:bg-white
+                hover:text-black">
+            </ul>
+        </div>
+    </main>
+    <%-  include('./layouts/footer') %>
